@@ -74,3 +74,6 @@ php quick_trade.php ETHEUR 0.4 1.022
 ```
 
 Trades are paired (uniques) as `PAIR_AMOUNT`, so you don't need database. Just run the same pair and amount in while cycle or crontab.
+
+## Contribution
+Please feel free to fork and send pull request. Just add new script with your very own autotrade heuristic, grab credentials from yaml config and extend this readme so users known how to use it.
