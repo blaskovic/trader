@@ -8,6 +8,9 @@ foreach($res['result'] as $ticker => $amount) {
 
     if($ticker != 'ZEUR') {
         $res = $kraken->QueryPublic('Ticker', array('pair' => $ticker.'ZEUR'));
+        if(is_null($res) || !isset($res['result'])) {
+            $res = $kraken->QueryPublic('Ticker', array('pair' => $ticker.'EUR'));
+        }
         $pair = array_keys($res['result'])[0];
         $price = $res['result'][$pair]['a'][0];
     } else {
